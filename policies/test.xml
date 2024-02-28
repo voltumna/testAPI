@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:AuditDetailAssertion>
+            <L7p:Detail stringValueReference="inline"><![CDATA[used test service
+${request.http.allheadervalues}
+${request.contenttype}
+${request.http.parameter.id}
+${request.mainpart}]]></L7p:Detail>
+            <L7p:Enabled booleanValue="false"/>
+            <L7p:LoggingOnly booleanValue="true"/>
+        </L7p:AuditDetailAssertion>
+        <L7p:Regex>
+            <L7p:AutoTarget booleanValue="false"/>
+            <L7p:Enabled booleanValue="false"/>
+            <L7p:Regex stringValue="&lt;origin>192.168.56.1&lt;/origin>"/>
+            <L7p:Replace booleanValue="true"/>
+            <L7p:Replacement stringValue="&lt;origin>192.168.56.191&lt;/origin>"/>
+        </L7p:Regex>
+        <L7p:HardcodedResponse>
+            <L7p:Base64ResponseBody stringValue="Q2lhbw=="/>
+            <L7p:ResponseContentType stringValue="text/plain; charset=UTF-8"/>
+        </L7p:HardcodedResponse>
+    </wsp:All>
+</wsp:Policy>
