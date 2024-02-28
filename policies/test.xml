@@ -18,7 +18,7 @@ ${request.mainpart}]]></L7p:Detail>
             <L7p:Replacement stringValue="&lt;origin>192.168.56.191&lt;/origin>"/>
         </L7p:Regex>
         <L7p:HardcodedResponse>
-            <L7p:Base64ResponseBody stringValue="Q2lhbw=="/>
+            <L7p:Base64ResponseBody stringValue="SGVsbG8gV29ybGQ="/>
             <L7p:ResponseContentType stringValue="text/plain; charset=UTF-8"/>
         </L7p:HardcodedResponse>
     </wsp:All>
